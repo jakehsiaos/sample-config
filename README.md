@@ -1,2 +1,2 @@
 # sample-config
-Sample configurations for spring boot microservices
+Spring Cloud External Configuration Repository
