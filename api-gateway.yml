@@ -17,13 +17,21 @@ authserver:
 # requests using zuul
 zuul:
   routes:
-    user-webservice: /api/user/**
-    task-webservice: /api/task/**
-    web-portal: /**
-    user:
-      path: /api/loggedinuser/**
+    user-webservice: 
+      path: /api/user/**
       stripPrefix: true
-      url: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}
+      serviceId: user-webservice 
+    auth:
+      path: /oauth/**
+      serviceId: auth-server
+
+          #    user-webservice: /api/user/**
+          #    task-webservice: /api/task/**
+          #    web-portal: /**
+          #    user:
+          #      path: /api/loggedinuser/**
+          #      stripPrefix: true
+          #      url: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}
 # Define the Eureka server that handles service registration
 eureka:
   client:
