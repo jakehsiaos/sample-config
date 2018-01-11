@@ -20,9 +20,11 @@ zuul:
     user-webservice: 
       path: /api/user/**
       stripPrefix: true
+      sensitiveHeaders:
       serviceId: user-webservice 
     auth:
       path: /oauth/**
+      sensistiveHeaders:
       serviceId: auth-server
 
           #    user-webservice: /api/user/**
