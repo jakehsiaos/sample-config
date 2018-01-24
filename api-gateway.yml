@@ -55,8 +55,10 @@ spring:
         secure: false
         path: /,/**/*.html
     client:
-      accessTokenUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/token
-      userAuthorizationUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/authorize
+      accessTokenUri: http://auth-server/${authserver.contextPath}/oauth/token
+      #accessTokenUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/token
+      #userAuthorizationUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/authorize
+      userAuthorizationUri: http://auth-server/${authserver.contextPath}/oauth/authorize
       clientId: client
       clientSecret: secret
 # The userInfoUri is used to authenticate the user so that SSO token can be relayed forward. It needs to either be
